@@ -72,18 +72,17 @@
 </template>
 
 <script setup>
-import gasEmisi from "@/assets/projects/gas-emisi.png"
 import portfolio from "@/assets/projects/portfolioNew.png"
 import miniProject from "@/assets/projects/landingPage.png"
 
 const projects = [
   {
-    title: "Tugas Besar Menghitung Jumlah Emisi Karbon dengan Bahasa C",
-    desc: "Program berbasis CLI menggunakan bahasa C sebagai tugas besar semester 1.",
-    tech: ["C", "CLI", "Algorithm"],
-    link: "https://github.com/fironsahuleka2007-art/tugasbesarsem1ddp",
-    image: gasEmisi,
-    progress: 100,
+  title: "Tugas Besar Menghitung Emisi Karbon",
+  desc: "Program berbasis CLI menggunakan bahasa C.",
+  tech: ["C", "CLI", "Algorithm"],
+  link: "https://github.com/fironsahuleka2007-art/tugasbesarsem1ddp",
+  image: "/projects/gas-emisi.png",
+  progress: 100,
   },
   {
     title: "Website Portfolio",
