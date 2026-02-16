@@ -53,22 +53,26 @@ function toggleMenu() {
 .logo {
   font-weight: 700;
   font-size: 1.5rem;
+  list-style: none;  
   color: #6c63ff;
 }
 
 .nav-links {
   display: flex;
+  list-style: none;  
   gap: 2rem;
 }
 
 .nav-item {
   color: #6c63ff;
   font-weight: 500;
+  list-style: none;  
   transition: color 0.3s ease;
 }
 
 .nav-item:hover {
   color: #6c63ff;
+  list-style: none;  
 }
 
 .hamburger {
