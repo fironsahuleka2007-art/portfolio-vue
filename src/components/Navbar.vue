@@ -1,50 +1,34 @@
 <template>
-  <nav class="navbar">
-    <img src="../assets/polban.png" alt="logo" width="45" height="45" />
-    <template>
-    <nav class="fixed top-0 left-0 w-full bg-white shadow z-50 flex justify-between items-center px-6 py-4">
+  <nav class="navbar fixed top-0 left-0 w-full bg-white shadow z-50 flex justify-between items-center px-6 py-4">
     <!-- Logo Polban -->
-    <div class="flex items-center gap-4 cursor-pointer" @click="scrollToTop">
-      <img src="/assets/polban-logo.png" alt="Polban Logo" class="h-10 w-auto"/>
+    <div class="flex items-center gap-2 cursor-pointer" @click="scrollToTop">
+      <img :src="polbanLogo" alt="Polban Logo" class="h-10 w-auto"/>
       <span class="font-bold text-xl text-purple-600">Polban</span>
     </div>
-    <!-- Back to Top Button -->
-    <button v-show="showTopBtn" @click="scrollToTop"
-            class="bg-purple-600 text-white p-2 rounded-full shadow hover:bg-purple-700 transition-all">
-      <i class="fas fa-arrow-up"></i>
-    </button>
-  </nav>
-</template>
-<script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-const showTopBtn = ref(false)
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-const handleScroll = () => {
-  showTopBtn.value = window.scrollY > 300
-}
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
-</script>
-    <ul class="nav-links">
+
+    <!-- Navigation Links -->
+    <ul class="nav-links hidden md:flex gap-6">
       <li v-for="link in links" :key="link.name">
         <a :href="link.href" class="nav-item">{{ link.name }}</a>
       </li>
     </ul>
-    <div class="hamburger" @click="toggleMenu">
+
+    <!-- Hamburger -->
+    <div class="hamburger flex flex-col gap-1 md:hidden" @click="menuOpen = !menuOpen">
       <span :class="{ 'open': menuOpen }"></span>
       <span :class="{ 'open': menuOpen }"></span>
       <span :class="{ 'open': menuOpen }"></span>
     </div>
+
+    <!-- Back to Top Button -->
+    <button v-show="showTopBtn" @click="scrollToTop"
+            class="bg-purple-600 text-white p-2 rounded-full shadow hover:bg-purple-700 transition-all absolute right-6">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </nav>
 
-  <!-- Mobile menu -->
-  <ul class="mobile-menu" v-if="menuOpen">
+  <!-- Mobile Menu -->
+  <ul v-if="menuOpen" class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden">
     <li v-for="link in links" :key="link.name">
       <a :href="link.href" @click="menuOpen=false">{{ link.name }}</a>
     </li>
@@ -52,8 +36,12 @@ onUnmounted(() => {
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import polbanLogo from '@/assets/polban.png'
+
 const menuOpen = ref(false)
+const showTopBtn = ref(false)
+
 const links = [
   { name: 'Home', href: '#hero' },
   { name: 'About', href: '#about' },
@@ -61,62 +49,36 @@ const links = [
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Contact', href: '#contact' },
 ]
-function toggleMenu() {
-  menuOpen.value = !menuOpen.value
-}
+
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
+const handleScroll = () => showTopBtn.value = window.scrollY > 300
+
+onMounted(() => window.addEventListener('scroll', handleScroll))
+onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
 
 <style scoped>
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.9);
+  font-family: 'Poppins', sans-serif;
   backdrop-filter: blur(6px);
-  z-index: 100;
-  font-family: 'Poppins', Tahoma;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  list-style: none;  
-  color: #6c63ff;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;  
-  gap: 2rem;
 }
 
 .nav-item {
   color: #6c63ff;
   font-weight: 500;
-  list-style: none;  
   transition: color 0.3s ease;
 }
 
 .nav-item:hover {
-  color: #6c63ff;
-  list-style: none;  
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
+  color: #4b47c5;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
   background: #6c63ff;
-  border-radius: 3px;
+  border-radius: 2px;
   transition: all 0.3s ease;
 }
 
@@ -132,17 +94,12 @@ function toggleMenu() {
 
 /* Mobile menu */
 .mobile-menu {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 2rem;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(6px);
-}
-
-@media (max-width:768px){
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .mobile-menu { display: flex; }
+  z-index: 40;
 }
 </style>
