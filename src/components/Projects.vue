@@ -72,9 +72,6 @@
 </template>
 
 <script setup>
-import portfolio from "@/assets/projects/portfolioNew.png"
-import miniProject from "@/assets/projects/landingPage.png"
-
 const projects = [
   {
   title: "Tugas Besar Menghitung Emisi Karbon",
@@ -89,7 +86,7 @@ const projects = [
     desc: "Website portfolio pribadi menggunakan Vue dan Tailwind CSS.",
     tech: ["Vue", "Tailwind", "Cloudflare"],
     link: "https://8b29552d.portfolio-vue-77d.pages.dev",
-    image: portfolio,
+    image: "/projects/portfolioNew.png",
     progress: 75,
   },
   {
@@ -97,7 +94,7 @@ const projects = [
     desc: "Latihan frontend & UI sederhana untuk Mata Kuliah Proyek 1.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/fironsahuleka2007-art/teamLandingPage",
-    image: miniProject,
+    image: "/projects/landingPage.png",
     progress: 100,
   },
 ]
