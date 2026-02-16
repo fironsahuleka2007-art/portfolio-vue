@@ -14,7 +14,7 @@ const skills = [
   },
   {
     title: "Problem Solving",
-    desc: "Terbiasa mencari solusi saat menemukan error dalam kode dan mampu menganalisis masalah secara logis.",
+    desc: "Terbiasa mencari solusi saat menemukan masalah dan mampu menganalisis masalah secara logis.",
     icon: "fas fa-lightbulb",
     color: "#6c63ff"
   },
