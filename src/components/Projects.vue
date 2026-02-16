@@ -72,9 +72,9 @@
 </template>
 
 <script setup>
-import cProject from '../assets/projects/c-project.png'
-import portfolio from '../assets/projects/portfolio.png'
-import miniProject from '../assets/projects/mini-project.png'
+import cProject from "../assets/projects/c-project.png"
+import portfolio from "../assets/projects/portfolio.png"
+import miniProject from "../assets/projects/mini-project.png"
 
 const projects = [
   {
