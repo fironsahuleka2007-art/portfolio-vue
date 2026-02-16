@@ -44,7 +44,7 @@ const skills = [
           Saya merupakan mahasiswa Teknik Informatika Politeknik Negeri Bandung yang memiliki ketertarikan pada bidang pengembangan teknologi. Saya senang mempelajari hal baru, memecahkan masalah, serta bekerja secara teamwork sehingga semua pekerjaan dapat diselesaikan dengan baik. Saya percaya bahwa kemampuan untuk terus belajar dan beradaptasi dengan lingkungan yang ada.
         </p>
         <p class="text-gray-600">
-          Selain itu, saya juga tertarik untuk aktif dalam kegiatan organisasi karena saya percaya kemampuan kerja sama tim, komunikasi, dan kepemimpinan merupakan hal penting untuk pengembangan diri dan karier di masa depan. Melalui keikutsertaan dalam himpunan, saya berharap dapat berkontribusi sekaligus mengembangkan kemampuan teknis dan soft skill saya.
+          Selain itu, saya juga tertarik untuk aktif dalam kegiatan organisasi karena saya percaya kemampuan kerja sama tim, komunikasi, dan kepemimpinan merupakan hal penting untuk pengembangan diri dan karier di masa depan. Melalui keikutsertaan dalam HIMAKOM, saya berharap dapat berkontribusi sekaligus mengembangkan kemampuan teknis dan soft skill saya.
         </p>
       </div>
 

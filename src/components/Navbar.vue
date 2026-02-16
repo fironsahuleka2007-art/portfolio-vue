@@ -3,9 +3,7 @@
     <!-- Logo Polban -->
     <div class="flex items-center gap-2 cursor-pointer" @click="scrollToTop">
       <img :src="polbanLogo" alt="Polban Logo" class="h-10 w-auto"/>
-      <span class="font-bold text-xl text-purple-600">Polban</span>
     </div>
-
     <!-- Navigation Links -->
     <ul class="nav-links hidden md:flex gap-6">
       <li v-for="link in links" :key="link.name">
@@ -62,16 +60,19 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .navbar {
   font-family: 'Poppins', sans-serif;
   backdrop-filter: blur(6px);
+  list-style: none; 
 }
 
 .nav-item {
   color: #6c63ff;
   font-weight: 500;
+  list-style: none; 
   transition: color 0.3s ease;
 }
 
 .nav-item:hover {
   color: #4b47c5;
+  list-style: none; 
 }
 
 .hamburger span {
