@@ -55,7 +55,7 @@ const activeSection = ref('#hero')
 const links = [
   { name: 'Home', href: '#hero' },
   { name: 'About and Skills', href: '#about' },
-  { name: 'Portfolio', href: '#projects' },
+  { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ]
 
