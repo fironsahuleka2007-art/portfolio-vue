@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar fixed top-0 left-0 w-full bg-white shadow z-50 flex justify-between items-center px-6 py-4">
-    
+<nav class="navbar fixed top-0 left-0 w-full bg-white shadow z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4"></div>
     <!-- Logo -->
     <div class="flex items-center gap-2 cursor-pointer" @click="scrollToTop">
       <img :src="polbanLogo" alt="Polban Logo" class="h-10 w-auto"/>
@@ -21,14 +21,16 @@
     </div>
 
     <!-- Back To Top -->
-    <button v-show="showTopBtn" @click="scrollToTop"
-      class="bg-purple-600 text-white p-2 rounded-full shadow hover:bg-purple-700 transition-all absolute right-6">
-      <i class="fas fa-arrow-up"></i>
+    <button
+    v-show="showTopBtn"
+    @click="scrollToTop"
+    class="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow hover:bg-purple-700 transition z-[999]">
+    <i class="fas fa-arrow-up"></i>
     </button>
 
   </nav>
 
-  <!-- ✅ MOBILE MENU (SATU SAJA) -->
+  <!-- MOBILE MENU (SATU SAJA) -->
   <ul v-if="menuOpen"
     class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden list-none m-0 p-0">
     
