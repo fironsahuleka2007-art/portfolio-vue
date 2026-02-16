@@ -1,17 +1,20 @@
 <template>
-  <nav :class="['navbar fixed top-0 left-0 w-full z-50 transition-all duration-500', bgColor]">
+  <nav class="navbar fixed top-0 left-0 w-full bg-white shadow z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
 
       <!-- Logo -->
       <div class="flex items-center gap-2 cursor-pointer" @click="scrollToTop">
-        <img :src="polbanLogo" alt="Polban Logo" class="h-10 w-auto"/>
+        <img :src="polbanLogo" alt="Polban Logo" class="h-12 w-auto"/>
       </div>
 
       <!-- Desktop Menu -->
       <ul class="nav-links hidden md:flex gap-6">
         <li v-for="link in links" :key="link.name">
           <a :href="link.href"
-            :class="['nav-item transition-colors', activeSection === link.href ? 'font-bold text-black' : 'font-normal text-purple-600']">
+             :class="[
+               'nav-item transition-colors',
+               activeSection === link.href ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded' : 'font-medium text-purple-600'
+             ]">
             {{ link.name }}
           </a>
         </li>
@@ -30,8 +33,11 @@
         class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden">
       <li v-for="link in links" :key="link.name">
         <a :href="link.href"
-          @click="menuOpen=false"
-          :class="['nav-item block', activeSection === link.href ? 'font-bold text-black' : 'font-normal text-purple-600']">
+           @click="menuOpen=false"
+           :class="[
+             'nav-item block',
+             activeSection === link.href ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded' : 'font-medium text-purple-600'
+           ]">
           {{ link.name }}
         </a>
       </li>
@@ -45,7 +51,6 @@ import polbanLogo from '../assets/polban.png'
 
 const menuOpen = ref(false)
 const activeSection = ref('#hero')
-const bgColor = ref('bg-white/90 backdrop-blur')
 
 const links = [
   { name: 'Home', href: '#hero' },
@@ -57,25 +62,19 @@ const links = [
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
-// Detect current section on scroll
+// detect active section
 const handleScroll = () => {
-  const scrollPos = window.scrollY + 80 // offset for navbar height
+  const scrollPos = window.scrollY + 80 // offset navbar
+  let found = false
   for (const link of links) {
     const el = document.querySelector(link.href)
     if (el && el.offsetTop <= scrollPos && el.offsetTop + el.offsetHeight > scrollPos) {
       activeSection.value = link.href
-      // Ganti background sesuai section
-      switch(link.href){
-        case '#hero': bgColor.value = 'bg-purple-100/90 backdrop-blur'; break;
-        case '#about': bgColor.value = 'bg-yellow-100/90 backdrop-blur'; break;
-        case '#skills': bgColor.value = 'bg-green-100/90 backdrop-blur'; break;
-        case '#portfolio': bgColor.value = 'bg-blue-100/90 backdrop-blur'; break;
-        case '#contact': bgColor.value = 'bg-pink-100/90 backdrop-blur'; break;
-        default: bgColor.value = 'bg-white/90 backdrop-blur';
-      }
+      found = true
       break
     }
   }
+  if (!found) activeSection.value = ''
 }
 
 onMounted(() => window.addEventListener('scroll', handleScroll))
@@ -85,9 +84,11 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 <style scoped>
 .navbar {
   font-family: 'Poppins', sans-serif;
-  transition: background-color 0.5s ease;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
 }
 
+/* Desktop & mobile nav item */
 .nav-item {
   transition: all 0.3s ease;
 }
