@@ -19,15 +19,6 @@
       <span :class="{ open: menuOpen }"></span>
       <span :class="{ open: menuOpen }"></span>
     </div>
-
-    <!-- Back To Top -->
-    <button
-    v-show="showTopBtn"
-    @click="scrollToTop"
-    class="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow hover:bg-purple-700 transition z-[999]">
-    <i class="fas fa-arrow-up"></i>
-    </button>
-
   </nav>
 
   <!-- MOBILE MENU (SATU SAJA) -->

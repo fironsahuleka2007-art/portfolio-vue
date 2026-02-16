@@ -3,31 +3,31 @@ const skills = [
   {
     title: "Web Development",
     desc: "Mampu membangun tampilan website menggunakan HTML, CSS, dan JavaScript serta memahami dasar framework frontend seperti Vue.",
-    icon: "fas fa-code", // laptop/code icon
+    icon: "fas fa-code", 
     color: "#6c63ff"
   },
   {
     title: "UI/UX Design",
     desc: "Memahami dasar desain antarmuka yang user-friendly, konsistensi layout, dan penggunaan warna yang nyaman untuk meningkatkan pengalaman pengguna.",
-    icon: "fas fa-pencil-ruler", // design icon
+    icon: "fas fa-pencil-ruler", 
     color: "#f1c40f"
   },
   {
     title: "Problem Solving",
     desc: "Terbiasa mencari solusi saat menemukan error dalam kode dan mampu menganalisis masalah secara logis.",
-    icon: "fas fa-lightbulb", // ide/solution icon
+    icon: "fas fa-lightbulb",
     color: "#6c63ff"
   },
   {
     title: "Continuous Learning",
     desc: "Memiliki kemauan belajar tinggi terhadap permasalahan dan juga mencoba untuk terus mengembangkan kemampuan teknis maupun non-teknis.",
-    icon: "fas fa-book-open", // belajar/icon buku
+    icon: "fas fa-book-open",
     color: "#f1c40f"
   },
   {
     title: "Team Collaboration",
     desc: "Mampu bekerja dalam tim, berkomunikasi dengan baik, dan bertanggung jawab terhadap tugas.",
-    icon: "fas fa-users", // teamwork icon
+    icon: "fas fa-users", 
     color: "#6c63ff"
   },
 ]
