@@ -57,13 +57,29 @@
               </span>
             </div>
 
-            <a
-              :href="project.link"
-              target="_blank"
-              class="text-blue-500 text-sm hover:underline"
-            >
-              Lihat Detail →
-            </a>
+            <div class="flex gap-4">
+  <!-- LIVE DEMO -->
+  <a
+    v-if="project.demo"
+    :href="project.demo"
+    target="_blank"
+    class="text-sm text-white bg-blue-500 px-4 py-2 rounded
+          hover:bg-blue-600 transition"
+  >
+    Live Demo
+  </a>
+
+  <!-- REPOSITORY -->
+  <a
+    v-if="project.repo"
+    :href="project.repo"
+    target="_blank"
+    class="text-sm text-blue-500 border border-blue-500 px-4 py-2 rounded
+          hover:bg-blue-50 transition"
+  >
+    Repository
+  </a>
+</div>
           </div>
         </div>
       </div>
@@ -74,26 +90,28 @@
 <script setup>
 const projects = [
   {
-  title: "Tugas Besar Menghitung Emisi Karbon",
-  desc: "Program berbasis CLI menggunakan bahasa C.",
-  tech: ["C", "CLI", "Algorithm"],
-  link: "https://github.com/fironsahuleka2007-art/tugasbesarsem1ddp",
-  image: "/projects/gas-emisi.png",
-  progress: 100,
+    title: "Tugas Besar Menghitung Emisi Karbon",
+    desc: "Program berbasis CLI menggunakan bahasa C.",
+    tech: ["C", "CLI", "Algorithm"],
+    repo: "https://github.com/fironsahuleka2007-art/tugasbesarsem1ddp",
+    image: "/projects/gas-emisi.png",
+    progress: 100,
   },
   {
     title: "Website Portfolio",
     desc: "Website portfolio pribadi menggunakan Vue dan Tailwind CSS.",
     tech: ["Vue", "Tailwind", "Cloudflare"],
-    link: "https://8b29552d.portfolio-vue-77d.pages.dev",
+    demo: "https://8b29552d.portfolio-vue-77d.pages.dev",
+    repo: "https://github.com/fironsahuleka2007-art/portfolio-vue",
     image: "/projects/portfolioNew.png",
     progress: 75,
   },
   {
     title: "Website Team Landing Page",
-    desc: "Latihan frontend & UI sederhana untuk Mata Kuliah Proyek 1.",
+    desc: "Latihan frontend & UI sederhana.",
     tech: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/fironsahuleka2007-art/teamLandingPage",
+    demo: "https://fironsahuleka2007-art.github.io/teamLandingPage",
+    repo: "https://github.com/fironsahuleka2007-art/teamLandingPage",
     image: "/projects/landingPage.png",
     progress: 100,
   },
