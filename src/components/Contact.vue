@@ -5,7 +5,7 @@
 
     <div class="contact-links">
       <!-- Email -->
-      <a href="mailto:firon@example.com" target="_blank" class="contact-item" title="Email me">
+      <a href="mailto:firon.fariz.tif425@polban.ac.id" target="_blank" class="contact-item" title="Email me">
   <svg xmlns="http://www.w3.org/2000/svg" fill="#D14836" viewBox="0 0 24 24">
     <path d="M12 13.065L1.5 6.5v11.999h21V6.5l-10.5 6.565z"/>
     <path d="M12 13.065L22.5 6.5H1.5l10.5 6.565z"/>

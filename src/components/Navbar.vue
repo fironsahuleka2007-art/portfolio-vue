@@ -11,10 +11,10 @@
       <ul class="nav-links hidden md:flex gap-6 list-none">
         <li v-for="link in links" :key="link.name">
           <a :href="link.href"
-             :class="[
-               'nav-item transition-colors',
-               activeSection === link.href ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded' : 'font-medium text-purple-600'
-             ]">
+            :class="[
+              'nav-item transition-colors',
+              activeSection === link.href ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded' : 'font-medium text-purple-600'
+            ]">
             {{ link.name }}
           </a>
         </li>
@@ -33,11 +33,11 @@
     class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden list-none">
       <li v-for="link in links" :key="link.name">
         <a :href="link.href"
-           @click="menuOpen=false"
-           :class="[
-             'nav-item block',
-             activeSection === link.href ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded' : 'font-medium text-purple-600'
-           ]">
+          @click="menuOpen=false"
+          :class="[
+            'nav-item block',
+            activeSection === link.href ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded' : 'font-medium text-purple-600'
+          ]">
           {{ link.name }}
         </a>
       </li>
