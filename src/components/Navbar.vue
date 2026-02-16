@@ -1,37 +1,44 @@
 <template>
   <nav class="navbar fixed top-0 left-0 w-full bg-white shadow z-50 flex justify-between items-center px-6 py-4">
-    <!-- Logo Polban -->
+    
+    <!-- Logo -->
     <div class="flex items-center gap-2 cursor-pointer" @click="scrollToTop">
       <img :src="polbanLogo" alt="Polban Logo" class="h-10 w-auto"/>
     </div>
-    <!-- Navigation Links -->
-    <ul class="nav-links hidden md:flex gap-6">
-      <li v-for="link in links" :key="link.name">
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links hidden md:flex gap-6 list-none m-0 p-0">
+      <li v-for="link in links" :key="link.name" class="list-none">
         <a :href="link.href" class="nav-item">{{ link.name }}</a>
       </li>
     </ul>
 
     <!-- Hamburger -->
     <div class="hamburger flex flex-col gap-1 md:hidden" @click="menuOpen = !menuOpen">
-      <span :class="{ 'open': menuOpen }"></span>
-      <span :class="{ 'open': menuOpen }"></span>
-      <span :class="{ 'open': menuOpen }"></span>
+      <span :class="{ open: menuOpen }"></span>
+      <span :class="{ open: menuOpen }"></span>
+      <span :class="{ open: menuOpen }"></span>
     </div>
 
-    <!-- Back to Top Button -->
+    <!-- Back To Top -->
     <button v-show="showTopBtn" @click="scrollToTop"
-            class="bg-purple-600 text-white p-2 rounded-full shadow hover:bg-purple-700 transition-all absolute right-6">
+      class="bg-purple-600 text-white p-2 rounded-full shadow hover:bg-purple-700 transition-all absolute right-6">
       <i class="fas fa-arrow-up"></i>
     </button>
+
   </nav>
 
-  <!-- Mobile Menu -->
-  <ul v-if="menuOpen" class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden">
-    <li v-for="link in links" :key="link.name">
+  <!-- ✅ MOBILE MENU (SATU SAJA) -->
+  <ul v-if="menuOpen"
+    class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden list-none m-0 p-0">
+    
+    <li v-for="link in links" :key="link.name" class="list-none">
       <a :href="link.href" @click="menuOpen=false">{{ link.name }}</a>
     </li>
+
   </ul>
 </template>
+
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
