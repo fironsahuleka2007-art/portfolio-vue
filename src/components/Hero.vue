@@ -8,9 +8,10 @@ import Navbar from "./Navbar.vue"
   <section class="min-h-screen flex items-center">
     <div class="max-w-6xl mx-auto px-6 pt-24">
       <p class="text-sm text-gray-500 mb-3">
-        <span class="text-yellow-400 font-semibold">Highlight</span>
-        Halo, saya Firon Fariz Sahuleka, Mahasiswa Teknik Informatika Politeknik Negeri Bandung.
-      </p>
+      <div data-aos="fade-up">
+      <h1>Hi, I'm Firon</h1>
+      <p>Web & UI/UX Developer creating interactive experiences</p>
+      </div>
 
       <h1 class="text-4xl md:text-6xl font-bold leading-tight">
         Firon Fariz Sahuleka.<br />

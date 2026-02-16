@@ -2,7 +2,15 @@
   <section id="projects" class="py-20">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
-
+<circle-progress
+  :size="100"
+  :progress="90"
+  :stroke-width="8"
+  :animation="true"
+  :animation-duration="1000"
+  :fill="false"
+  :empty-stroke="'#e5e7eb'"
+  :stroke="'#3b82f6'" />  
       <div class="grid md:grid-cols-3 gap-6">
         <div
           v-for="n in 3"
