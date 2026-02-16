@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import cProject from "@/assets/projects/gasEmisi.png"
+import cProject from "@/assets/projects/gas-emisi.png"
 import portfolio from "@/assets/projects/portfolioNew.png"
 import miniProject from "@/assets/projects/landingPage.png"
 
