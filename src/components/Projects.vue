@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import cProject from "@/assets/projects/gas-emisi.png"
+import gasEmisi from "@/assets/projects/gas-emisi.png"
 import portfolio from "@/assets/projects/portfolioNew.png"
 import miniProject from "@/assets/projects/landingPage.png"
 
@@ -82,7 +82,7 @@ const projects = [
     desc: "Program berbasis CLI menggunakan bahasa C sebagai tugas besar semester 1.",
     tech: ["C", "CLI", "Algorithm"],
     link: "https://github.com/fironsahuleka2007-art/tugasbesarsem1ddp",
-    image: cProject,
+    image: gasEmisi,
     progress: 100,
   },
   {
