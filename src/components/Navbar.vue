@@ -8,7 +8,7 @@
       </div>
 
       <!-- Desktop Menu -->
-      <ul class="nav-links hidden md:flex gap-6">
+      <ul class="nav-links hidden md:flex gap-6 list-none">
         <li v-for="link in links" :key="link.name">
           <a :href="link.href"
              :class="[
@@ -30,7 +30,7 @@
 
     <!-- Mobile Menu -->
     <ul v-if="menuOpen"
-        class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden">
+    class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden list-none">
       <li v-for="link in links" :key="link.name">
         <a :href="link.href"
            @click="menuOpen=false"
@@ -85,6 +85,12 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   font-family: 'Poppins', sans-serif;
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
+}
+
+ul, li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Desktop & mobile nav item */
