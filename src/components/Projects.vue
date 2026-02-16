@@ -10,9 +10,9 @@
           v-for="(project, index) in projects"
           :key="index"
           class="bg-white rounded-xl overflow-hidden shadow
-                 cursor-pointer transition-all duration-300
-                 hover:-translate-y-1.5 hover:shadow-lg
-                 animate-card"
+                cursor-pointer transition-all duration-300
+                hover:-translate-y-1.5 hover:shadow-lg
+                animate-card"
           :style="{ animationDelay: `${index * 120}ms` }"
         >
           <!-- IMAGE -->
@@ -21,7 +21,7 @@
               :src="project.image"
               :alt="project.title"
               class="w-full h-full object-cover
-                     transition duration-500 hover:scale-110"
+                    transition duration-500 hover:scale-110"
             />
           </div>
 
@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import cProject from "@/assets/projects/gas-emisi.png"
+import cProject from "@/assets/projects/gasEmisi.png"
 import portfolio from "@/assets/projects/portfolioNew.png"
 import miniProject from "@/assets/projects/landingPage.png"
 
