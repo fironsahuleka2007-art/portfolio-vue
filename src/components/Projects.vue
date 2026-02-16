@@ -9,50 +9,62 @@
         <div
           v-for="(project, index) in projects"
           :key="index"
-          class="relative bg-white rounded-xl p-6 shadow
-                transition hover:-translate-y-2 hover:shadow-lg"
+          class="bg-white rounded-xl overflow-hidden shadow
+                 cursor-pointer transition-all duration-300
+                 hover:-translate-y-1.5 hover:shadow-lg
+                 animate-card"
+          :style="{ animationDelay: `${index * 120}ms` }"
         >
-          <!-- Progress -->
-          <div class="absolute top-4 right-4">
-            <circle-progress
-              :size="55"
-              :progress="project.progress"
-              :stroke-width="6"
-              :fill="false"
-              :empty-stroke="'#e5e7eb'"
-              :stroke="'#3b82f6'"
+          <!-- IMAGE -->
+          <div class="h-40 overflow-hidden">
+            <img
+              :src="project.image"
+              :alt="project.title"
+              class="w-full h-full object-cover
+                     transition duration-500 hover:scale-110"
             />
           </div>
 
-          <!-- Title -->
-          <h3 class="font-semibold text-lg mb-2">
-            {{ project.title }}
-          </h3>
+          <!-- CONTENT -->
+          <div class="p-6 relative">
+            <!-- Progress -->
+            <div class="absolute top-4 right-4">
+              <circle-progress
+                :size="50"
+                :progress="project.progress"
+                :stroke-width="6"
+                :fill="false"
+                :empty-stroke="'#e5e7eb'"
+                :stroke="'#3b82f6'"
+              />
+            </div>
 
-          <!-- Description -->
-          <p class="text-sm text-gray-600 mb-4">
-            {{ project.desc }}
-          </p>
+            <h3 class="font-semibold text-lg mb-2">
+              {{ project.title }}
+            </h3>
 
-          <!-- Tech Stack -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span
-              v-for="tech in project.tech"
-              :key="tech"
-              class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded"
+            <p class="text-sm text-gray-600 mb-4">
+              {{ project.desc }}
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                v-for="tech in project.tech"
+                :key="tech"
+                class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded"
+              >
+                {{ tech }}
+              </span>
+            </div>
+
+            <a
+              :href="project.link"
+              target="_blank"
+              class="text-blue-500 text-sm hover:underline"
             >
-              {{ tech }}
-            </span>
+              Lihat Detail →
+            </a>
           </div>
-
-          <!-- Link -->
-          <a
-            :href="project.link"
-            target="_blank"
-            class="text-blue-500 text-sm hover:underline"
-          >
-            Lihat Detail →
-          </a>
         </div>
       </div>
     </div>
@@ -60,12 +72,17 @@
 </template>
 
 <script setup>
+import cProject from "@/assets/projects/c-project.png"
+import portfolio from "@/assets/projects/portfolio.png"
+import miniProject from "@/assets/projects/mini-project.png"
+
 const projects = [
   {
     title: "Tugas Besar Menghitung Jumlah Emisi Karbon dengan Bahasa C",
     desc: "Program berbasis CLI menggunakan bahasa C sebagai tugas besar semester 1.",
     tech: ["C", "CLI", "Algorithm"],
     link: "https://github.com/fironsahuleka2007-art/tugasbesarsem1ddp",
+    image: cProject,
     progress: 100,
   },
   {
@@ -73,7 +90,31 @@ const projects = [
     desc: "Website portfolio pribadi menggunakan Vue dan Tailwind CSS.",
     tech: ["Vue", "Tailwind", "Cloudflare"],
     link: "https://8b29552d.portfolio-vue-77d.pages.dev",
+    image: portfolio,
     progress: 75,
+  },
+  {
+    title: "Website Team Landing Page",
+    desc: "Latihan frontend & UI sederhana untuk Mata Kuliah Proyek 1.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/fironsahuleka2007-art/teamLandingPage",
+    image: miniProject,
+    progress: 100,
   },
 ]
 </script>
+
+<style scoped>
+.animate-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
