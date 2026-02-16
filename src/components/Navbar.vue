@@ -47,7 +47,7 @@ function toggleMenu() {
   background: rgba(255,255,255,0.9);
   backdrop-filter: blur(6px);
   z-index: 100;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Tahoma;
 }
 
 .logo {
@@ -62,7 +62,7 @@ function toggleMenu() {
 }
 
 .nav-item {
-  color: #333;
+  color: #6c63ff;
   font-weight: 500;
   transition: color 0.3s ease;
 }
