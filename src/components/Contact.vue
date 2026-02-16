@@ -1,9 +1,8 @@
 <template>
-  <section id="contact" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6 text-center">
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-xl mx-auto px-6 text-center">
       <h2 class="text-3xl font-bold mb-4">Contact</h2>
-      <p class="text-gray-600 mb-8">
-        Tertarik kolaborasi atau sekadar ngobrol? Hubungi saya 👇
+      <p class="text-gray-600 mb-6">
       </p>
 
       <div class="flex justify-center gap-6">
