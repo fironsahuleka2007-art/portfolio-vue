@@ -54,9 +54,8 @@ const activeSection = ref('#hero')
 
 const links = [
   { name: 'Home', href: '#hero' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Portfolio', href: '#portfolio' },
+  { name: 'About and Skills', href: '#about' },
+  { name: 'Portfolio', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -91,10 +90,12 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 /* Desktop & mobile nav item */
 .nav-item {
   transition: all 0.3s ease;
+  list-style: none;
 }
 
 .nav-item:hover {
   color: #4b47c5;
+  list-style: none;
 }
 
 /* Hamburger */
