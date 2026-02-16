@@ -7,7 +7,7 @@ import Navbar from "./Navbar.vue"
 
   <section class="min-h-screen flex items-center">
     <div class="max-w-6xl mx-auto px-6 pt-24">
-      <p class="text-sm text-gray-500 mb-3">
+      <p class="text-sm text-gray-500 mb-3">Welcome to my portfolio</p>
       <div data-aos="fade-up">
       <h1>Hi, I'm Firon</h1>
       <p>Web & UI/UX Developer creating interactive experiences</p>
