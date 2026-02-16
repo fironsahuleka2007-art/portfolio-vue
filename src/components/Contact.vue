@@ -6,7 +6,7 @@
     <div class="contact-links">
       <!-- Email -->
       <a href="mailto:firon@example.com" target="_blank" class="contact-item" title="Email me">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#6c63ff" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#EA4335 " viewBox="0 0 24 24">
           <path d="M12 13.5l-11-7.5v15h22v-15l-11 7.5z"/>
           <path d="M12 0l-12 8.25 12 8.25 12-8.25-12-8.25z"/>
         </svg>
