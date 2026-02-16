@@ -2,11 +2,13 @@
   <section class="hero">
     <div class="hero-text">
       <h1>Hi! I'm Firon</h1>
-      <p>Web Developer & UI/UX Designer creating fun & interactive experiences.</p>
+      <p>Mahasiswa Teknik Informatika Politeknik Negeri Bandung</p>
+      <p>HIMAKOM 40</p>
+      <p>I am passionate about developing user-friendly digital solutions and continuously learning new technologies. I enjoy creating interactive web experiences and collaborating in team environments to build meaningful technology projects.</p>
       <button class="btn" @click="scrollToPortfolio">See My Work</button>
     </div>
     <div class="hero-img">
-      <img src="../assets/firon.jpeg" alt="Firon Profile" />
+    <img src="../assets/firon.jpeg" alt="Firon Profile" />
     </div>
   </section>
 </template>

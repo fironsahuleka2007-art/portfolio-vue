@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <div class="logo">Firon.</div>
+    <img src="../assets/polban.png" alt="logo" />
     <ul class="nav-links">
       <li v-for="link in links" :key="link.name">
         <a :href="link.href" class="nav-item">{{ link.name }}</a>
