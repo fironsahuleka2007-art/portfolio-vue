@@ -6,7 +6,7 @@
       <button class="btn" @click="scrollToPortfolio">See My Work</button>
     </div>
     <div class="hero-img">
-      <img src="@/assets/profile.png" alt="Firon Profile" />
+      <img src="@/assets/firon.jpeg" alt="Firon Profile" />
     </div>
   </section>
 </template>
