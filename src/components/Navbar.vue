@@ -37,7 +37,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import polbanLogo from '@/assets/polban.png'
+import polbanLogo from '../assets/polban.png'
 
 const menuOpen = ref(false)
 const showTopBtn = ref(false)
