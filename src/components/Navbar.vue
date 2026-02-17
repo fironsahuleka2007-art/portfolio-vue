@@ -9,15 +9,19 @@
 
       <!-- Desktop Menu -->
       <ul class="nav-links hidden md:flex gap-6 list-none">
-        <li v-for="link in links" :key="link.name">
-          <a :href="link.href"
-            :class="[
-              'nav-item transition-colors',
-              activeSection === link.href ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded' : 'font-medium text-purple-600'
-            ]">
-            {{ link.name }}
-          </a>
-        </li>
+        <li v-for="link in links" :key="link.id">
+          <button
+          @click="scrollToSection(link.id)"
+          :class="[
+          'nav-item transition-colors',
+            activeSection === link.id
+        ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded'
+        : 'font-medium text-purple-600'
+    ]"
+  >
+    {{ link.name }}
+  </button>
+</li>
       </ul>
 
       <!-- Hamburger -->
@@ -31,16 +35,17 @@
     <!-- Mobile Menu -->
     <ul v-if="menuOpen"
     class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden list-none">
-      <li v-for="link in links" :key="link.name">
-        <a :href="link.href"
-          @click="menuOpen=false"
-          :class="[
-            'nav-item block',
-            activeSection === link.href ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded' : 'font-medium text-purple-600'
-          ]">
-          {{ link.name }}
-        </a>
-      </li>
+      <button
+        @click="scrollToSection(link.id); menuOpen = false"
+        :class="[
+      'nav-item block text-left',
+      activeSection === link.id
+      ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded'
+      : 'font-medium text-purple-600'
+      ]"
+      >
+      {{ link.name }}
+      </button>
     </ul>
   </nav>
 </template>
@@ -53,16 +58,16 @@ const menuOpen = ref(false)
 const activeSection = ref('#hero')
 
 const links = [
-  { name: 'Home', href: '#hero' },
-  { name: 'About and Skills', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Assignments', href: '#assignments' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', id: 'hero' },
+  { name: 'About and Skills', id: 'about' },
+  { name: 'Projects', id: 'projects' },
+  { name: 'Assignments', id: 'assignments' },
+  { name: 'Contact', id: 'contact' },
 ]
+
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
-// detect active section
 const handleScroll = () => {
   const scrollPos = window.scrollY + 80 // offset navbar
   let found = false
@@ -79,6 +84,22 @@ const handleScroll = () => {
 
 onMounted(() => window.addEventListener('scroll', handleScroll))
 onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+
+const scrollToSection = (id) => {
+  const el = document.getElementById(id)
+  if (!el) return
+
+  const yOffset = -80 // tinggi navbar
+  const y =
+    el.getBoundingClientRect().top + window.pageYOffset + yOffset
+
+  window.scrollTo({
+    top: y,
+    behavior: 'smooth',
+  })
+
+  activeSection.value = id
+}
 </script>
 
 <style scoped>
