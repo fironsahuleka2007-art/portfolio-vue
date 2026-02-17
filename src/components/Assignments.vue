@@ -1,5 +1,5 @@
 <template>
-<section class="py-20 bg-slate-50 min-h-screen">
+<section id="assignments" class="py-20 bg-slate-50 min-h-screen scroll-mt-24">
     <div class="max-w-5xl mx-auto px-6">
     <!-- HEADER -->
     <div class="text-center mb-14">

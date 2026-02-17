@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="hero-text">
       <h1>Hi! I'm Firon</h1>
       <p>Mahasiswa Teknik Informatika Politeknik Negeri Bandung</p>
@@ -21,8 +21,8 @@ function scrollToProjects() {
 </script>
 
 <style scoped>
-/* Font & Base */
 .hero {
+  min-height: calc(100vh - 80px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,6 +32,7 @@ function scrollToProjects() {
   font-family: 'Poppins', sans-serif;
   border-radius: 20px;
   gap: 2rem;
+  scroll-margin-top: 80px;
 }
 
 .hero-text h1 {
