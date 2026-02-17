@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="hero">
+  <section id="hero" class="hero hero-fade">
     <div class="hero-text">
       <h1>Hi! I'm Firon</h1>
       <p>Mahasiswa Teknik Informatika Politeknik Negeri Bandung</p>
@@ -7,6 +7,8 @@
       <p>I am passionate about developing user-friendly digital solutions and continuously learning new technologies. I enjoy creating interactive web experiences and collaborating in team environments to build meaningful technology projects.</p>
       <button class="btn" @click="scrollToAssignments">See My Assignments</button>
     </div>
+    <div class="hero-text hero-delay"></div>
+    <div class="hero-img hero-delay-2"></div>
     <div class="hero-img">
     <img src="../assets/firon.jpeg" alt="Firon Profile" />
     </div>
@@ -33,6 +35,27 @@ function scrollToAssignments() {
   border-radius: 20px;
   gap: 2rem;
   scroll-margin-top: 80px;
+}
+.hero-fade {
+  opacity: 0;
+  animation: heroFade 0.9s ease-out forwards;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-delay {
+  animation-delay: .2s;
+}
+
+.hero-delay-2 {
+  animation-delay: .4s;
 }
 
 .hero-text h1 {
