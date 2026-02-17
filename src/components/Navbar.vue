@@ -4,24 +4,25 @@
 
       <!-- Logo -->
       <div class="flex items-center gap-2 cursor-pointer" @click="scrollToTop">
-        <img :src="polbanLogo" alt="Polban Logo" class="h-12 w-auto"/>
+        <img :src="polbanLogo" alt="Polban Logo" class="h-12 w-auto" />
       </div>
 
       <!-- Desktop Menu -->
-      <ul class="nav-links hidden md:flex gap-6 list-none">
+      <ul class="hidden md:flex gap-6">
         <li v-for="link in links" :key="link.id">
-          <button
-          @click="scrollToSection(link.id)"
-          :class="[
-          'nav-item transition-colors',
-            activeSection === link.id
-        ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded'
-        : 'font-medium text-purple-600'
-    ]"
-  >
-    {{ link.name }}
-  </button>
-</li>
+          <a
+            href="javascript:void(0)"
+            @click="scrollToSection(link.id)"
+            :class="[
+              'nav-item transition-colors',
+              activeSection === link.id
+                ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded'
+                : 'font-medium text-purple-600'
+            ]"
+          >
+            {{ link.name }}
+          </a>
+        </li>
       </ul>
 
       <!-- Hamburger -->
@@ -33,19 +34,24 @@
     </div>
 
     <!-- Mobile Menu -->
-    <ul v-if="menuOpen"
-    class="mobile-menu flex flex-col gap-4 mt-2 px-6 py-4 bg-white shadow md:hidden list-none">
-      <button
-        @click="scrollToSection(link.id); menuOpen = false"
-        :class="[
-      'nav-item block text-left',
-      activeSection === link.id
-      ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded'
-      : 'font-medium text-purple-600'
-      ]"
-      >
-      {{ link.name }}
-      </button>
+    <ul
+      v-if="menuOpen"
+      class="mobile-menu flex flex-col gap-4 px-6 py-4 bg-white shadow md:hidden"
+    >
+      <li v-for="link in links" :key="link.id">
+        <a
+          href="javascript:void(0)"
+          @click="scrollToSection(link.id); menuOpen = false"
+          :class="[
+            'nav-item',
+            activeSection === link.id
+              ? 'font-bold text-white bg-purple-600 px-3 py-1 rounded'
+              : 'font-medium text-purple-600'
+          ]"
+        >
+          {{ link.name }}
+        </a>
+      </li>
     </ul>
   </nav>
 </template>
@@ -55,7 +61,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import polbanLogo from '../assets/polban.png'
 
 const menuOpen = ref(false)
-const activeSection = ref('#hero')
+const activeSection = ref('hero')
 
 const links = [
   { name: 'Home', id: 'hero' },
@@ -65,33 +71,13 @@ const links = [
   { name: 'Contact', id: 'contact' },
 ]
 
-
-const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
-
-const handleScroll = () => {
-  const scrollPos = window.scrollY + 80 // offset navbar
-  let found = false
-  for (const link of links) {
-    const el = document.querySelector(link.href)
-    if (el && el.offsetTop <= scrollPos && el.offsetTop + el.offsetHeight > scrollPos) {
-      activeSection.value = link.href
-      found = true
-      break
-    }
-  }
-  if (!found) activeSection.value = ''
-}
-
-onMounted(() => window.addEventListener('scroll', handleScroll))
-onUnmounted(() => window.removeEventListener('scroll', handleScroll))
-
+// Scroll to section
 const scrollToSection = (id) => {
   const el = document.getElementById(id)
   if (!el) return
 
-  const yOffset = -80 // tinggi navbar
-  const y =
-    el.getBoundingClientRect().top + window.pageYOffset + yOffset
+  const offset = -80
+  const y = el.getBoundingClientRect().top + window.pageYOffset + offset
 
   window.scrollTo({
     top: y,
@@ -100,6 +86,31 @@ const scrollToSection = (id) => {
 
   activeSection.value = id
 }
+
+// Scroll to top
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+// Detect active section on scroll
+const handleScroll = () => {
+  const scrollPos = window.scrollY + 100
+
+  for (const link of links) {
+    const el = document.getElementById(link.id)
+    if (
+      el &&
+      el.offsetTop <= scrollPos &&
+      el.offsetTop + el.offsetHeight > scrollPos
+    ) {
+      activeSection.value = link.id
+      return
+    }
+  }
+}
+
+onMounted(() => window.addEventListener('scroll', handleScroll))
+onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
 
 <style scoped>
@@ -109,21 +120,18 @@ const scrollToSection = (id) => {
   transition: all 0.3s ease;
 }
 
-ul, li {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Desktop & mobile nav item */
 .nav-item {
   transition: all 0.3s ease;
-  list-style: none;
 }
 
 .nav-item:hover {
   color: #4b47c5;
-  list-style: none;
 }
 
 /* Hamburger */
