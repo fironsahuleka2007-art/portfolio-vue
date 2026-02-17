@@ -56,6 +56,7 @@ const links = [
   { name: 'Home', href: '#hero' },
   { name: 'About and Skills', href: '#about' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Assignments', href: '#assignments' },
   { name: 'Contact', href: '#contact' },
 ]
 
