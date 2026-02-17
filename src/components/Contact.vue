@@ -8,18 +8,12 @@
 
     <!-- CARDS -->
     <div class="cards">
+
       <!-- GitHub -->
-      <a
-        href="https://github.com/fironsahuleka2007-art"
-        target="_blank"
-        class="card"
-      >
+      <a href="https://github.com/fironsahuleka2007-art" target="_blank" class="card">
         <div class="icon dark">
-          <!-- GitHub SVG -->
           <svg viewBox="0 0 24 24">
-            <path
-              fill="white"
-              d="M12 .297c-6.63 0-12 5.373-12 12
+            <path fill="white" d="M12 .297c-6.63 0-12 5.373-12 12
               0 5.303 3.438 9.8 8.205 11.385
               .6.113.82-.258.82-.577
               0-.285-.01-1.04-.015-2.04
@@ -43,8 +37,7 @@
               0 1.606-.014 2.898-.014 3.293
               0 .319.216.694.825.576
               C20.565 22.092 24 17.592 24 12.297
-              24 5.67 18.627.297 12 .297z"
-            />
+              24 5.67 18.627.297 12 .297z"/>
           </svg>
         </div>
         <h3>GitHub</h3>
@@ -52,37 +45,81 @@
       </a>
 
       <!-- Instagram -->
-      <a
-        href="https://www.instagram.com/frnshlk"
-        target="_blank"
-        class="card"
-      >
-        <div class="icon ig">IG</div>
+      <a href="https://www.instagram.com/frnshlk" target="_blank" class="card">
+        <div class="icon ig">
+          <svg viewBox="0 0 24 24">
+            <path fill="white" d="M7 2C4.2 2 2 4.2 2 7v10
+              c0 2.8 2.2 5 5 5h10
+              c2.8 0 5-2.2 5-5V7
+              c0-2.8-2.2-5-5-5H7zm10
+              2a3 3 0 013 3v10
+              a3 3 0 01-3 3H7
+              a3 3 0 01-3-3V7
+              a3 3 0 013-3h10zm-5
+              3a5 5 0 100 10
+              5 5 0 000-10zm0
+              2a3 3 0 110 6
+              3 3 0 010-6zm4.5-.9
+              a1.1 1.1 0 100 2.2
+              1.1 1.1 0 000-2.2z"/>
+          </svg>
+        </div>
         <h3>Instagram</h3>
         <p>@frnshlk</p>
       </a>
 
       <!-- WhatsApp -->
-      <a
-        href="https://wa.me/62895385588900"
-        target="_blank"
-        class="card"
-      >
-        <div class="icon wa">WA</div>
+      <a href="https://wa.me/62895385588900" target="_blank" class="card">
+        <div class="icon wa">
+          <svg viewBox="0 0 24 24">
+            <path fill="white" d="M12 2a10 10 0 00-8.94 14.44L2
+              22l5.7-1.5A10 10 0 1012
+              2zm0 18a8 8 0 01-4.1-1.1
+              l-.3-.2-3.4.9.9-3.3-.2-.3
+              A8 8 0 1112 20zm4.4-5.7
+              c-.2-.1-1.3-.6-1.5-.7
+              -.2-.1-.4-.1-.5.1
+              -.1.2-.6.7-.7.8
+              -.1.1-.3.1-.5 0
+              -.2-.1-.9-.3-1.7-1
+              -.6-.5-1-1.1-1.1-1.3
+              -.1-.2 0-.3.1-.4
+              .1-.1.2-.3.3-.4
+              .1-.1.1-.2.2-.4
+              .1-.1 0-.2 0-.3
+              -.1-.1-.5-1.3-.7-1.8
+              -.2-.5-.4-.4-.5-.4h-.4
+              c-.1 0-.3.1-.4.2
+              -.1.1-.6.6-.6 1.4
+              0 .8.6 1.6.7 1.7
+              .1.1 1.2 1.8 3 2.5
+              1.8.7 1.8.4 2.1.4
+              .3 0 1.3-.5 1.5-1
+              .2-.5.2-.9.1-1
+              -.1-.1-.2-.1-.4-.2z"/>
+          </svg>
+        </div>
         <h3>WhatsApp</h3>
         <p>+62 895-3855-8890</p>
       </a>
 
       <!-- LinkedIn -->
-      <a
-        href="https://www.linkedin.com/in/firon-fariz-sahuleka-926481372/"
-        target="_blank"
-        class="card"
-      >
-        <div class="icon li">in</div>
+      <a href="https://www.linkedin.com/in/firon-fariz-sahuleka-926481372/" target="_blank" class="card">
+        <div class="icon li">
+          <svg viewBox="0 0 24 24">
+            <path fill="white" d="M4.98 3.5a2.5 2.5 0 110 5
+              2.5 2.5 0 010-5zM3 9h4v12H3z
+              m7 0h3.8v1.7h.1c.5-.9
+              1.7-1.9 3.6-1.9
+              3.8 0 4.5 2.5 4.5 5.8V21h-4
+              v-5.3c0-1.3 0-3-1.8-3
+              -1.8 0-2.1 1.4-2.1 2.9V21h-4z"/>
+          </svg>
+        </div>
         <h3>LinkedIn</h3>
         <p>Firon Fariz</p>
       </a>
+
     </div>
 
     <!-- EMAIL -->
@@ -108,12 +145,8 @@
   margin-bottom: 4rem;
 }
 
-.header h2 {
-  font-size: 2.6rem;
-}
-.header span {
-  color: #facc15;
-}
+.header h2 { font-size: 2.6rem; }
+.header span { color: #facc15; }
 
 .cards {
   max-width: 1000px;
@@ -130,7 +163,7 @@
   padding: 2rem;
   text-align: center;
   text-decoration: none;
-  transition: 0.35s;
+  transition: .35s;
 }
 
 .card:hover {
@@ -143,11 +176,13 @@
   height: 64px;
   margin: auto auto 1rem;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: white;
+  display: grid;
+  place-items: center;
+}
+
+.icon svg {
+  width: 30px;
+  height: 30px;
 }
 
 .dark { background:#111827 }
