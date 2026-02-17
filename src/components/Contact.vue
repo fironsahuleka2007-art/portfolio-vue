@@ -1,95 +1,176 @@
 <template>
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out!</p>
+  <section id="contact" class="contact-section">
+    <!-- HEADER -->
+    <div class="header">
+      <h2><span>Kontak</span> Saya</h2>
+      <p>Hubungi saya melalui media sosial berikut</p>
+    </div>
 
-    <div class="contact-links">
-      <!-- Email -->
-      <a href="mailto:firon.fariz.tif425@polban.ac.id" target="_blank" class="contact-item" title="Email me">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="#D14836" viewBox="0 0 24 24">
-    <path d="M12 13.065L1.5 6.5v11.999h21V6.5l-10.5 6.565z"/>
-    <path d="M12 13.065L22.5 6.5H1.5l10.5 6.565z"/>
-    <path d="M12 11.2L1.5 4.5h21L12 11.2z"/>
-  </svg>
-  Email
-</a>
-
-      <!-- WhatsApp -->
-      <a href="https://wa.me/62895385588900" target="_blank" class="contact-item" title="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#25D366" viewBox="0 0 24 24">
-          <path d="M20.52 3.48A11.91 11.91 0 0012 0C5.37 0 0 5.37 0 12a11.94 11.94 0 001.67 6.01L0 24l6.21-1.63A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.88a9.87 9.87 0 01-5.28-1.53l-.38-.23-3.68.97.98-3.61-.25-.38A9.87 9.87 0 012.13 12 9.88 9.88 0 1121.87 12 9.87 9.87 0 0112 21.88zm5.41-7.64c-.29-.15-1.72-.85-1.99-.94-.27-.1-.47-.15-.67.15s-.77.94-.95 1.13c-.18.18-.36.2-.66.07-.29-.15-1.22-.45-2.32-1.42-.86-.76-1.44-1.7-1.61-2-.17-.28 0-.43.12-.57.12-.12.27-.31.41-.47.14-.15.18-.27.29-.45.1-.18.05-.34-.03-.48-.09-.15-.67-1.62-.92-2.22-.24-.57-.49-.49-.67-.5-.17 0-.37 0-.57 0s-.47.07-.72.34c-.25.27-.96.94-.96 2.29 0 1.34.98 2.63 1.12 2.81.14.18 1.93 2.94 4.68 4.12.65.28 1.15.45 1.55.58.65.21 1.24.18 1.7.11.52-.08 1.72-.7 1.96-1.37.24-.66.24-1.23.17-1.37-.06-.13-.24-.21-.52-.36z"/>
-        </svg>
-        WhatsApp
+    <!-- CONTACT CARDS -->
+    <div class="cards">
+      <a
+        v-for="item in contacts"
+        :key="item.name"
+        :href="item.link"
+        target="_blank"
+        class="card"
+      >
+        <div class="icon" :style="{ background: item.bg }">
+          <component :is="item.icon" />
+        </div>
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.value }}</p>
       </a>
+    </div>
 
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/frnshlk" target="_blank" class="contact-item" title="Follow on Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#E4405F" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.348 3.608 1.323.975.975 1.261 2.242 1.323 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.348 2.633-1.323 3.608-.975.975-2.242 1.261-3.608 1.323-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.348-3.608-1.323-.975-.975-1.261-2.242-1.323-3.608-.058-1.265-.07-1.645-.07-4.849s.012-3.584.07-4.849c.062-1.366.348-2.633 1.323-3.608.975-.975 2.242-1.261 3.608-1.323 1.265-.058 1.645-.07 4.849-.07zm0-2.163c-3.259 0-3.667.012-4.947.072-1.567.072-2.96.363-4.064 1.467-1.104 1.104-1.395 2.497-1.467 4.064-.06 1.28-.072 1.688-.072 4.947s.012 3.667.072 4.947c.072 1.567.363 2.96 1.467 4.064 1.104 1.104 2.497 1.395 4.064 1.467 1.28.06 1.688.072 4.947.072s3.667-.012 4.947-.072c1.567-.072 2.96-.363 4.064-1.467 1.104-1.104 1.395-2.497 1.467-4.064.06-1.28.072-1.688.072-4.947s-.012-3.667-.072-4.947c-.072-1.567-.363-2.96-1.467-4.064-1.104-1.104-2.497-1.395-4.064-1.467-1.28-.06-1.688-.072-4.947-.072z"/>
-          <path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/>
-          <circle cx="18.406" cy="5.594" r="1.44"/>
-        </svg>
-        Instagram
-      </a>
-
-      <!-- GitHub -->
-      <a href="https://github.com/fironsahuleka2007-art" target="_blank" class="contact-item" title="Check my GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24">
-          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.415-4.042-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.086-.743.084-.728.084-.728 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.381 1.235-3.222-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 013-.404c1.02.005 2.045.138 3 .404 2.288-1.552 3.294-1.23 3.294-1.23.653 1.653.242 2.873.12 3.176.77.841 1.232 1.912 1.232 3.222 0 4.61-2.805 5.625-5.475 5.921.43.372.813 1.103.813 2.222 0 1.606-.014 2.898-.014 3.293 0 .321.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-        </svg>
-        GitHub
-      </a>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/firon-fariz-sahuleka-926481372/" target="_blank" class="contact-item" title="Connect on LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#0077B5" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.025-3.039-1.852-3.039-1.854 0-2.138 1.446-2.138 2.939v5.669H9.347V9h3.414v1.561h.049c.476-.9 1.637-1.848 3.37-1.848 3.604 0 4.27 2.371 4.27 5.451v6.288zM5.337 7.433a2.062 2.062 0 11-.001-4.124 2.062 2.062 0 01.001 4.124zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.554C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.277V1.723C24 .771 23.2 0 22.225 0z"/>
-        </svg>
-        LinkedIn
-      </a>
+    <!-- EMAIL BOX -->
+    <div class="email-box">
+      <h4>Email</h4>
+      <p>firon.fariz.tif425@polban.ac.id</p>
+      <span>Feel free to reach out!k</span>
     </div>
   </section>
 </template>
 
+<script setup>
+import {
+  GithubIcon,
+  InstagramIcon,
+  WhatsAppIcon,
+  LinkedinIcon,
+} from './icons'
+
+const contacts = [
+  {
+    name: 'GitHub',
+    value: '@fironsahuleka2007-art',
+    link: 'https://github.com/fironsahuleka2007-art',
+    bg: '#1f2937',
+    icon: GithubIcon,
+  },
+  {
+    name: 'Instagram',
+    value: '@frnshlk',
+    link: 'https://www.instagram.com/frnshlk',
+    bg: 'linear-gradient(135deg,#f58529,#dd2a7b,#8134af)',
+    icon: InstagramIcon,
+  },
+  {
+    name: 'WhatsApp',
+    value: '+62 895-3855-8890',
+    link: 'https://wa.me/62895385588900',
+    bg: '#22c55e',
+    icon: WhatsAppIcon,
+  },
+  {
+    name: 'LinkedIn',
+    value: 'Firon Fariz',
+    link: 'https://www.linkedin.com/in/firon-fariz-sahuleka-926481372/',
+    bg: '#2563eb',
+    icon: LinkedinIcon,
+  },
+]
+</script>
+
 <style scoped>
-.contact {
-  padding: 4rem 2rem;
-  text-align: center;
+.contact-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #1e3a8a, #2563eb);
+  color: white;
   font-family: 'Poppins', sans-serif;
-  background: #f8f8f8;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.header h2 span {
+  color: #facc15;
+}
+
+.header p {
+  margin-top: 1rem;
+  opacity: 0.85;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  color: #1f2937;
   border-radius: 20px;
-  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.8rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
-.contact-item {
+.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1rem;
-  background: #fff;
-  border-radius: 12px;
-  font-weight: 500;
-  text-decoration: none;
-  color: #333;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  justify-content: center;
+  color: white;
 }
 
-.contact-item svg {
-  width: 24px;
-  height: 24px;
+.icon svg {
+  width: 32px;
+  height: 32px;
 }
 
-.contact-item:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  color: #64748b;
+}
+
+/* EMAIL BOX */
+.email-box {
+  max-width: 700px;
+  margin: 5rem auto 0;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.email-box h4 {
+  color: #facc15;
+  margin-bottom: 0.5rem;
+}
+
+.email-box span {
+  display: block;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
 </style>

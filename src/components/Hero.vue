@@ -5,7 +5,7 @@
       <p>Mahasiswa Teknik Informatika Politeknik Negeri Bandung</p>
       <p>HIMAKOM 40</p>
       <p>I am passionate about developing user-friendly digital solutions and continuously learning new technologies. I enjoy creating interactive web experiences and collaborating in team environments to build meaningful technology projects.</p>
-      <button class="btn" @click="scrollToProjects">See My Work</button>
+      <button class="btn" @click="scrollToAssignments">See My Assignments</button>
     </div>
     <div class="hero-img">
     <img src="../assets/firon.jpeg" alt="Firon Profile" />
@@ -14,8 +14,8 @@
 </template>
 
 <script setup>
-function scrollToProjects() {
-  const el = document.getElementById("projects");
+function scrollToAssignments() {
+  const el = document.getElementById("assignments");
   if (el) el.scrollIntoView({ behavior: "smooth" });
 }
 </script>
