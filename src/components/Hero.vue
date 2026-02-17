@@ -34,6 +34,7 @@ function scrollToAssignments() {
   gap: 2rem;
   scroll-margin-top: 80px;
 }
+
 .animate-in {
   animation: fadeUp 0.9s ease-out both;
 }
