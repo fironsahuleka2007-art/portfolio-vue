@@ -135,7 +135,7 @@
 .contact-section {
   min-height: 100vh;
   padding: 6rem 2rem;
-  background: linear-gradient(180deg,#1e3a8a,#2563eb);
+  background: linear-gradient(135deg,#a29bfe,#6c63ff);
   color: white;
   font-family: 'Poppins', sans-serif;
 }
