@@ -2,7 +2,7 @@
   <section id="contact" class="contact-section">
     <!-- HEADER -->
     <div class="header">
-      <h2><span>Kontak</span> Saya</h2>
+      <h2><span>Contact</span>Me</h2>
       <p>Hubungi saya melalui media sosial berikut</p>
     </div>
 
@@ -146,7 +146,7 @@
 }
 
 .header h2 { font-size: 2.6rem; }
-.header span { color: #facc15; }
+.header span { color: #ffffff; }
 
 .cards {
   max-width: 1000px;
@@ -198,5 +198,5 @@
   background: rgba(255,255,255,.15);
   text-align: center;
 }
-.email-box h4 { color:#facc15 }
+.email-box h4 { color:#ffffff }
 </style>
