@@ -29,7 +29,7 @@ function scrollToProjects() {
   padding: 4rem 2rem;
   background: linear-gradient(135deg,#a29bfe,#6c63ff);
   color: #fff;
-  font-family: 'Poppins', sans-serif; /* santai & modern */
+  font-family: 'Poppins', sans-serif;
   border-radius: 20px;
   gap: 2rem;
 }

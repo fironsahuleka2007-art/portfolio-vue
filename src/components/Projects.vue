@@ -119,10 +119,22 @@ const projects = [
 </script>
 
 <style scoped>
-.animate-card {
+.assignment-card {
+  background: linear-gradient(
+    to right,
+    rgba(59, 130, 246, 0.08),
+    rgba(255, 255, 255, 1)
+  );
+}
+
+.assignment-card:hover {
+  transform: translateY(-2px);
+}
+
+.fade-up {
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.6s ease-out forwards;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease forwards;
 }
 
 @keyframes fadeUp {

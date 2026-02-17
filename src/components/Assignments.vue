@@ -1,7 +1,6 @@
 <template>
 <section class="py-20 bg-slate-50 min-h-screen">
     <div class="max-w-5xl mx-auto px-6">
-    
     <!-- HEADER -->
     <div class="text-center mb-14">
         <h1 class="text-4xl font-bold mb-3 text-slate-800">
@@ -14,13 +13,14 @@
         <div
         v-for="(item, index) in assignments"
         :key="index"
-        class="bg-white rounded-xl p-6 shadow-sm
-                border-l-4 transition
-                hover:shadow-md"
-        :class="item.status === 'Selesai'
-            ? 'border-blue-500'
-            : 'border-yellow-400'"
-        >
+        class="assignment-card rounded-xl p-6 shadow-sm
+        transition duration-300 border-l-4
+        hover:shadow-md fade-up"
+        :style="{ animationDelay: `${index * 120}ms` }"
+    :class="item.status === 'Selesai'
+    ? 'border-blue-500'
+    : 'border-yellow-400'">
+
         <!-- TOP -->
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
@@ -83,6 +83,7 @@
             >
             Dokumen
             </a>
+            
         </div>
         </div>
     </div>
@@ -125,3 +126,30 @@ const assignments = [
 },
 ]
 </script>
+
+<style scoped>
+.assignment-card {
+background: linear-gradient(
+    to right,
+    rgba(59, 130, 246, 0.08),
+    rgba(255, 255, 255, 1)
+);
+}
+
+.assignment-card:hover {
+transform: translateY(-2px);
+}
+
+.fade-up {
+opacity: 0;
+transform: translateY(20px);
+animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+</style>
