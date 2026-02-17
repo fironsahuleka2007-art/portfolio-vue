@@ -5,6 +5,9 @@
     <div class="text-center mb-14">
         <h1 class="text-4xl font-bold mb-3 text-slate-800">
         Assignments
+        <p class="text-sm text-slate-500 mt-3">
+        Total tugas: {{ assignments.length }}
+        </p>
         </h1>
     </div>
 
@@ -61,30 +64,29 @@
 
         <!-- ACTION -->
         <div class="flex gap-3 mt-6">
-            <a
-            v-if="item.repo"
-            :href="item.repo"
-            target="_blank"
-            class="px-4 py-2 text-sm rounded-md
-                    bg-blue-500 text-white
-                    hover:bg-blue-600 transition"
-            >
-            Repository
-            </a>
+<a
+    v-if="item.repo"
+    :href="item.repo"
+    target="_blank"
+    class="px-4 py-2 text-sm rounded-lg
+        bg-blue-600 text-white
+        hover:bg-blue-700 transition"
+>
+    Repository
+</a>
 
-            <a
-            v-if="item.doc"
-            :href="item.doc"
-            target="_blank"
-            class="px-4 py-2 text-sm rounded-md
-                    border border-slate-300
-                    text-slate-700
-                    hover:bg-slate-100 transition"
-            >
-            Dokumen
-            </a>
-            
-        </div>
+<a
+    v-if="item.doc"
+    :href="item.doc"
+    target="_blank"
+    class="px-4 py-2 text-sm rounded-lg
+        bg-white border border-slate-300
+        text-slate-700
+        hover:bg-slate-100 transition"
+>
+    Dokumen
+</a>
+</div>
         </div>
     </div>
 
@@ -95,31 +97,31 @@
 <script setup>
 const assignments = [
 {
-    title: "Tugas Besar Emisi Karbon",
-    course: "Dasar Dasar Pemrograman",
-    type: "Tugas Besar",
-    desc: "Program CLI berbasis bahasa C untuk menghitung estimasi emisi karbon dari aktivitas harian.",
-    tools: ["C", "CLI", "Algorithm"],
-    status: "Selesai",
-    repo: "https://github.com/fironsahuleka2007-art/tugasbesarsem1ddp",
-    doc: null,
-},
-{
     title: "Dokumen TOR Proyek",
-    course: "Proyek 1",
+    course: "Penugasan 2",
     type: "Dokumen",
     desc: "Penyusunan dokumen Terms of Reference sebagai perencanaan awal proyek.",
     tools: ["Word", "PDF"],
-    status: "Selesai",
+    status: "Proses",
     repo: null,
     doc: "#",
 },
 {
     title: "Infografis UI/UX",
-    course: "Proyek 1",
+    course: "Penugasan 3",
     type: "Infografis",
     desc: "Infografis konsep UI/UX dasar sebagai latihan visual komunikasi.",
-    tools: ["Figma", "Design"],
+    tools: ["Canva"],
+    status: "Proses",
+    repo: null,
+    doc: "#",
+},
+{
+    title: "Video Kreatif",
+    course: "Penugasan 4",
+    type: "Video Kreatif",
+    desc: "Pembuatan video kreatif untuk menunjukkan kemampuan desain dan komunikasi visual.",
+    tools: ["Capcut"],
     status: "Proses",
     repo: null,
     doc: "#",
