@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="hero">
+  <section id="hero" class="hero-section animate-in">
     <div class="hero-text">
       <h1>Hi! I'm Firon</h1>
       <p>Mahasiswa Teknik Informatika Politeknik Negeri Bandung</p>
@@ -33,6 +33,20 @@ function scrollToAssignments() {
   border-radius: 20px;
   gap: 2rem;
   scroll-margin-top: 80px;
+}
+.animate-in {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-text h1 {

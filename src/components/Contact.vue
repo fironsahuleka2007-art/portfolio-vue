@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section animate-in">
     <!-- HEADER -->
     <div class="header">
       <h2><span>Contact</span>Me</h2>
@@ -8,6 +8,7 @@
 
     <!-- CARDS -->
     <div class="cards">
+      
 
       <!-- GitHub -->
       <a href="https://github.com/fironsahuleka2007-art" target="_blank" class="card">
@@ -132,6 +133,46 @@
 </template>
 
 <style scoped>
+.animate-in {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: cardFade 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card:nth-child(1) { animation-delay: .1s }
+.card:nth-child(2) { animation-delay: .25s }
+.card:nth-child(3) { animation-delay: .4s }
+.card:nth-child(4) { animation-delay: .55s }
+
+.card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 45px rgba(0,0,0,.3);
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
 .contact-section {
   min-height: 100vh;
   padding: 6rem 2rem;

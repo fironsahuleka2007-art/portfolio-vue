@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="py-20 bg-slate-50">
+  <section id="projects" class="projects-section animate-in">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-10 text-center">
         Projects
@@ -125,6 +125,21 @@ const projects = [
     rgba(59, 130, 246, 0.08),
     rgba(255, 255, 255, 1)
   );
+}
+
+.animate-in {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .assignment-card:hover {
