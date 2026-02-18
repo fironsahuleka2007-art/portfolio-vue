@@ -102,9 +102,9 @@ const assignments = [
     type: "Dokumen",
     desc: "Penyusunan dokumen Terms of Reference sebagai perencanaan awal proyek.",
     tools: ["Word", "PDF"],
-    status: "Proses",
+    status: "Selesai",
     repo: null,
-    doc: "#",
+    doc: "https://drive.google.com/file/d/1BUBDNtqJlPa8X74mCKDeQY6NB-eArXX_/view?usp=sharing",
 },
 {
     title: "Infografis UI/UX",
