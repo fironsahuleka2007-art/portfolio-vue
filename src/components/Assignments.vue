@@ -47,24 +47,26 @@
         </div>
 
         <!-- PREVIEW -->
-        <div v-if="item.previewType" class="mt-4">
+        <div v-if="item.previewType" class="mt-4 bg-slate-100 rounded-lg p-2">
+  
         <!-- IMAGE -->
         <img
         v-if="item.previewType === 'image'"
         :src="item.preview"
-        class="w-full h-48 object-cover rounded-lg shadow"
+        class="w-full max-h-[420px] object-contain rounded-lg"
         />
 
         <!-- VIDEO -->
         <video
         v-if="item.previewType === 'video'"
-        class="w-full h-48 object-cover rounded-lg shadow"
+        class="w-full max-h-[420px] object-contain rounded-lg"
         autoplay
         muted
         playsinline
+        controls
         @loadedmetadata="limitVideo($event)"
         >
-        <source :src="item.preview" type="video/mp4" />
+    <source :src="item.preview" type="video/mp4" />
     </video>
 </div>
 
