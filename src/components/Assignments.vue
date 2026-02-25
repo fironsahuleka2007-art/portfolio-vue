@@ -46,6 +46,28 @@
             </span>
         </div>
 
+        <!-- PREVIEW -->
+        <div v-if="item.previewType" class="mt-4">
+        <!-- IMAGE -->
+        <img
+        v-if="item.previewType === 'image'"
+        :src="item.preview"
+        class="w-full h-48 object-cover rounded-lg shadow"
+        />
+
+        <!-- VIDEO -->
+        <video
+        v-if="item.previewType === 'video'"
+        class="w-full h-48 object-cover rounded-lg shadow"
+        autoplay
+        muted
+        playsinline
+        @loadedmetadata="limitVideo($event)"
+        >
+        <source :src="item.preview" type="video/mp4" />
+    </video>
+</div>
+
         <!-- DESC -->
         <p class="text-sm text-slate-600 mt-4 max-w-3xl">
             {{ item.desc }}
@@ -105,6 +127,8 @@ const assignments = [
     status: "Selesai",
     repo: null,
     doc: "https://drive.google.com/file/d/1BUBDNtqJlPa8X74mCKDeQY6NB-eArXX_/view?usp=sharing",
+    previewType: null,
+    preview: null,
 },
 {
     title: "Infografis UI/UX",
@@ -112,9 +136,11 @@ const assignments = [
     type: "Infografis",
     desc: "Infografis konsep UI/UX dasar sebagai latihan visual komunikasi.",
     tools: ["Canva"],
-    status: "Proses",
+    status: "Selesai",
     repo: null,
-    doc: "#",
+    doc: "https://drive.google.com/file/d/1_z98THfI2j6-bjjB8mEUUXPeA9L_Qckp/view?usp=sharing",
+    previewType: "image",
+    preview: "/projects/Peran Generasi muda.png"
 },
 {
     title: "Video Kreatif",
@@ -122,9 +148,11 @@ const assignments = [
     type: "Video Kreatif",
     desc: "Pembuatan video kreatif untuk menunjukkan kemampuan desain dan komunikasi visual.",
     tools: ["Capcut"],
-    status: "Proses",
+    status: "Selesai",
     repo: null,
-    doc: "#",
+    doc: "https://drive.google.com/file/d/1j5QtjVm9zst0T-UttVNVvv_oJAIi6lX0/view?usp=sharing",
+    previewType: "video",
+    preview: "/projects/preview ekse.mp4",
 },
 ]
 </script>
