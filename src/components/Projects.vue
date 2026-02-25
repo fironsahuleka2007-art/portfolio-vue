@@ -101,7 +101,7 @@ const projects = [
     title: "Website Portfolio",
     desc: "Website portfolio pribadi menggunakan Vue dan Tailwind CSS.",
     tech: ["Vue", "Tailwind", "Cloudflare"],
-    demo: "https://8b29552d.portfolio-vue-77d.pages.dev",
+    demo: "https://711fe240.portfolio-vue-77d.pages.dev/",
     repo: "https://github.com/fironsahuleka2007-art/portfolio-vue",
     image: "/projects/portfolioNew.png",
     progress: 75,
